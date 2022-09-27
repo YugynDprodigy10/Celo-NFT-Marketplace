@@ -38,16 +38,18 @@ const { chains, provider } = configureChains(
     }),
   ]
 );
+
+const { connectors } = getDefaultWallets({
+  appName: "Celo NFT Marketplace",
+  chains,
+});
+
 const wagmiClient = createClient({
   autoConnect: true,
   connectors,
   provider,
 });
 
-const { connectors } = getDefaultWallets({
-  appName: "Celo NFT Marketplace",
-  chains,
-});
 
 
 
